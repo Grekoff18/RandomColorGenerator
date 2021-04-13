@@ -1,6 +1,7 @@
 // Libs and packages imports
 import 'package:flutter/material.dart';
 // Project imports
+import '../config/constants/HomePage.dart';
 import 'HomeBody.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -20,6 +21,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
+        elevation: 50.0,
+        backgroundColor: APP_BAR_BACKGROUND,
+        brightness: Brightness.dark,
       ),
       body: HomeBody(),
     );

@@ -1,8 +1,10 @@
 // Libs and packages imports
 import 'package:flutter/material.dart';
 // Project imports
-import "../helpers/UniqueColorGenerator.dart";
-import "../helpers/Notifier.dart";
+import '../helpers/UniqueColorGenerator.dart';
+import '../config/constants/General.dart';
+import '../config/widgets/Clock.dart';
+import '../helpers/Notifier.dart';
 
 class HomeBody extends StatefulWidget{
   HomeBody({ Key key}) : super(key: key);
@@ -31,16 +33,26 @@ class _HomeBodyState extends State<HomeBody>{
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        alignment: Alignment.center,
-        color: _backgroundColor,
-        child: Text(
-          "Hey there",
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25
-          ),
+        color:  _backgroundColor,
+        child: Column(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Clock(context),
+            ),
+            Flexible(
+              child: Text("Hey There",
+                style: TextStyle(
+                  fontWeight: COMMON_TEXT_WEIGHT,
+                  fontSize: 25,
+                  color: COMMON_TEXT_COLOR,
+                ),
+                textAlign: TextAlign.center,
+              )
+            ),
+          ]
         ),
-      ),
+      )
     );
   }
 }
