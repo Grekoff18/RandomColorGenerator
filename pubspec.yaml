@@ -74,3 +74,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+assets:
+  # Custom fonts files might be here
+
+  #Language translation files might be here
+
+  #Html files might be here
+
+  #images might be here
+
