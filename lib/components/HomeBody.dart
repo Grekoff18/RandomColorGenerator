@@ -14,16 +14,14 @@ class HomeBody extends StatefulWidget{
 }
 
 class _HomeBodyState extends State<HomeBody>{
-  // Set default background color
+  // Set startup background color
   Color _backgroundColor = UniqueColorGenerator.getColor();
 
   // @click on screen => change bgColor MainHomePage && send notify
-  void _changeBackground() {
-    setState(() {
-      _backgroundColor = UniqueColorGenerator.getColor();
-      Notifier.snackBar("Background color changed", ScaffoldMessenger.of(context));
-    });
-  }
+  void _changeBackground() => setState(() => {
+    _backgroundColor = UniqueColorGenerator.getColor(),
+    Notifier.snackBar("Background color changed", ScaffoldMessenger.of(context))
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +34,25 @@ class _HomeBodyState extends State<HomeBody>{
         color:  _backgroundColor,
         child: Column(
           children: [
-            Flexible(
-              flex: 1,
-              child: Clock(context),
-            ),
-            Flexible(
-              child: Text("Hey There",
-                style: TextStyle(
-                  fontWeight: COMMON_TEXT_WEIGHT,
-                  fontSize: 25,
-                  color: COMMON_TEXT_COLOR,
-                ),
-                textAlign: TextAlign.center,
+            Clock(context),
+            Expanded(
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: const Center(
+                  child: const Text(
+                    "Hey There",
+                    style: TextStyle(
+                      fontWeight: textWeigth,
+                      fontFamily: "PressStart2P",
+                      fontSize: 25,
+                      color: textColor,
+                    ),
+                    textAlign: TextAlign.center,
+                  )
+                )
               )
-            ),
+            )
           ]
         ),
       )

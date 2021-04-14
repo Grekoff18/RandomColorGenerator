@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import '../config/constants/HomePage.dart';
 import 'HomeBody.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         centerTitle: true,
         elevation: 50.0,
-        backgroundColor: APP_BAR_BACKGROUND,
+        backgroundColor: appBarBackground,
         brightness: Brightness.dark,
       ),
       body: HomeBody(),
