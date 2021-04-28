@@ -1,8 +1,7 @@
 // Libs and packages imports
+import 'package:color_generator/config/constants/General.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-// Project imports
-import '../constants/General.dart';
 
 Widget Clock(BuildContext context) {
   return StreamBuilder(
@@ -13,15 +12,19 @@ Widget Clock(BuildContext context) {
       return Container(
         width: MediaQuery.of(context).size.width,
         padding: new EdgeInsets.all(20.0),
-        child: Text(
-          DateFormat('MM/dd/yyyy hh:mm:ss').format(DateTime.now()),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: textWeigth,
-            fontFamily: "PressStart2P",
-            fontSize: 30,
-            color: textColor
-          ),
+        child: Column(
+          children: [
+            Text(
+              DateFormat(kDateFormat).format(DateTime.now()),
+              textAlign: TextAlign.center,
+              style: kBoldText,
+            ),
+            Text(
+              DateFormat(kTimeFormat).format(DateTime.now()),
+              textAlign: TextAlign.center,
+              style: kBoldText,
+            ),
+          ],
         ),
       );
     },
